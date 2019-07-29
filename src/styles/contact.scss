@@ -1,0 +1,113 @@
+@import "variables";
+.contact-container {
+	background: $white;
+	height: 89vh;
+}
+.contact-form-container {
+	padding: 100px 40px 0px;
+	background: $white;
+	width: 35%;
+	float: right;
+	h3 {
+		color: $grey;
+		text-align: right;
+		font-size: 2rem;
+		margin-bottom: 0px;
+		line-height: 1;
+		font-weight: 300;
+	}
+	h3 span {
+		color: #f95c4f;
+	}
+	p {
+		font-family: neuzeit-grotesk, sans-serif;
+		color: $grey;
+		font-weight: 300;
+		text-align: right;
+		margin-bottom: 0em;
+	}
+	.contact-form-item {
+		width: 100%;
+		margin-bottom: 0px !important;
+	}
+	.first-name {
+		width: 45% !important;
+		padding-right: 10px;
+	}
+	.last-name {
+		width: 55% !important;
+	}
+	.ant-radio-wrapper {
+		margin-right: 0px;
+	}
+	.ant-radio-wrapper:hover .ant-radio,
+	.ant-radio:hover .ant-radio-inner,
+	.ant-radio-input:focus + .ant-radio-inner {
+		border-color: $red !important;
+	}
+	.broker {
+		margin-top: 10px;
+	}
+	.broker .ant-radio-group {
+		float: right;
+		font-family: neuzeit-grotesk, sans-serif;
+		color: $grey;
+		font-weight: 300;
+		.ant-radio-inner {
+			background: $white;
+		}
+	}
+	.ant-radio-checked .ant-radio-inner {
+		border-color: $red;
+	}
+	.ant-radio-inner::after {
+		background: $red;
+	}
+	.broker-text {
+		margin-right: 10px;
+	}
+	.input-row .ant-input {
+		border-radius: 0px;
+		font-size: 16px !important;
+		background: $white;
+		border: 0px solid #707070ad;
+		border-bottom: 1px solid #707070ad;
+	}
+
+	.input-row .ant-input:hover {
+		border: 0px solid #d9d9d9;
+		border-bottom: 1px solid #707070ad;
+		border-right: 3px solid #707070ad;
+	}
+	.ant-form-explain {
+		margin-top: -35px !important;
+	}
+	.submit-btn {
+		margin-top: 20px;
+		width: 100px;
+		float: right;
+		color: $darkGrey;
+		background: $white;
+		border: 1px solid $darkGrey !important;
+		border-radius: 0px;
+	}
+	.submit-btn:hover,
+	.submit-btn:focus {
+		background: $red !important;
+		border-color: $red !important;
+	}
+	.terms {
+		font-size: 0.75rem;
+	}
+	@include tablet {
+		padding: 70px 20px 0px;
+		width: 75%;
+	}
+	@include mobile {
+		padding: 15px 10px 0px;
+		width: 100%;
+		p {
+			font-size: 0.8rem;
+		}
+	}
+}

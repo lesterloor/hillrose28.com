@@ -1,0 +1,9 @@
+.video-holder {
+	background: #000;
+}
+.video-holder img {
+	position: fixed;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%) perspective(1px);
+}

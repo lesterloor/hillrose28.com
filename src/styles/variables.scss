@@ -1,0 +1,33 @@
+$darkGrey: #707070;
+$white: #f4f4f4;
+$red: #f95c4f;
+$grey: #9a9a9a;
+
+$table-border: #b8bbbc;
+$table-header-text: #555e60;
+$table-row-text: #9a9a9a;
+$phone-min: 320px;
+$tablet-min: 768px;
+$tablet-max: 1024px;
+
+@mixin mobile {
+	@media (min-width: #{$phone-min}) and (max-width: #{$tablet-min - 1px}) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max }) {
+		@content;
+	}
+}
+
+@mixin desktops {
+	@media (min-width: #{$tablet-max}) {
+		@content;
+	}
+}
+@mixin responsive {
+	@media (min-width: #{$phone-min}) and (max-width: #{$tablet-max - 1px}) {
+		@content;
+	}
+}

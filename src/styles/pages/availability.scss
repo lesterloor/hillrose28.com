@@ -1,0 +1,83 @@
+@import "../variables.scss";
+
+.availability-page {
+	padding-top: 200px;
+	position: relative;
+	width: 100%;
+	max-width: 1920px;
+	height: 100vh;
+	background: $white;
+	.building-col {
+		width: 30%;
+	}
+	.table-col {
+		width: 70%;
+
+		.unit-table {
+			width: 100%;
+			max-width: 80%;
+			padding: 0 20px;
+			// margin: 0 auto;
+
+			.ant-table {
+				cursor: pointer;
+				font-family: futura-pt, sans-serif;
+				font-size: 10px !important;
+				font-weight: 300;
+				font-style: normal;
+			}
+			.ant-table-tbody > tr > td {
+				border-bottom: 1px solid $table-border;
+			}
+			.ant-table-thead > tr > th {
+				color: $table-header-text;
+				font-size: 1.9em;
+				font-weight: 300;
+				border-bottom: 1px solid $table-border;
+				background: #fafafa00;
+			}
+			.ant-table-tbody > tr > td {
+				color: $table-row-text;
+				font-weight: 300;
+				font-size: 5em;
+			}
+		}
+	}
+}
+.floor-plan-modal {
+	background: #ffffff00;
+
+	width: 50% !important;
+	.loader-wrapper {
+		position: absolute;
+		text-align: center;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		.loader {
+			font-size: 3em;
+		}
+	}
+	.ant-modal-body {
+		position: relative;
+		padding: 50px 0 0 !important;
+		height: 800px;
+		max-height: 900px !important;
+	}
+	.magnifier {
+		width: 100% !important;
+	}
+}
+.building-svg {
+	width: 600px;
+}
+.unit_100 {
+}
+
+.deselected-box {
+	opacity: 0 !important;
+}
+.selected-box {
+	opacity: 0.58 !important;
+	fill: #f95c4f !important;
+}
