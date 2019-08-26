@@ -1,5 +1,52 @@
 @import "~antd/dist/antd.css";
+@import "./variables.scss";
+body,
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	font-weight: 400;
+	font-size: 14px !important;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-body {
-	font-size: 10px;
+@include desktopSmall {
+	body,
+	html {
+		font-size: 12px !important;
+	}
+}
+@include desktopMedium {
+	body,
+	html {
+		font-size: 14px !important;
+	}
+}
+@include desktop {
+	body,
+	html {
+		font-size: 16px !important;
+	}
+}
+
+@include mobile {
+	body,
+	html {
+		font-size: 14px !important;
+	}
+}
+@include tablet {
+	body,
+	html {
+		font-size: 16px !important;
+	}
 }

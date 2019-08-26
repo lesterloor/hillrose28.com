@@ -1,106 +1,61 @@
 @import "../variables";
 @import "../burger";
 @import "../transitions";
-.white-nav {
-	top: 0 !important;
-	height: 100px;
-	background: white !important;
-	.nav-item-container {
-		// left: 25px !important;
 
-		.menu-item {
-			color: $grey !important;
-			z-index: 305 !important;
-		}
-		.menu-item:active {
-			color: black !important;
-		}
-	}
-	#burger-container {
-		display: none !important;
-	}
-}
-
-#nav-wrapper {
-	position: fixed;
+.header {
+	height: 10em;
 	width: 100%;
-	max-width: 1920px;
-	padding: 30px;
-	z-index: 306;
-	font-family: neuzeit-grotesk, sans-serif;
-	font-weight: 300;
-	font-style: normal;
-
-	@include responsive {
-		padding: 18px;
+	background-color: #ffffff00;
+	padding: 2em;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 500;
+	@include mobile {
+		padding: 1em;
 	}
-	#burger-container {
-		display: none !important;
+	@include tablet {
+		padding: 2em;
 	}
-
-	// NAV_ITEMS  ///
-	.nav-item-container {
-		width: 100%;
-		.menu-item {
-			font-size: 1.6em;
-			margin: 0 16px 0px 0px;
-			color: white;
-			@include tablet {
-				margin: 0 7px;
-			}
-		}
-		.fadeIn {
-			@include fadeIn;
-			pointer-events: all;
-		}
-		.fadeOut {
-			@include fadeOut;
-		}
-	}
-
-	// -NAV_ITEMS-  ///
-
-	// LOGO CONTAINER //
-	#logo-container {
-		opacity: 1;
-		position: relative;
-		float: right;
-		img {
-			width: 25vh;
-		}
-		@include mobile {
-			top: 15px;
-			right: 15px;
-		}
-		@include tablet {
-			top: 0px;
-			right: 15px;
-		}
-		.logo-text {
-			line-height: 1;
-			font-family: futura-pt, sans-serif;
-			font-size: 45px;
-			color: $grey;
-			text-align: right;
+	.header-nav {
+		z-index: 500;
+		.nav-item {
+			margin-right: 1em;
+			font-size: 1em;
+			color: #f95c4f;
+			font-family: neuzeit-grotesk, sans-serif;
 			font-weight: 300;
 			font-style: normal;
-			p {
-				margin-bottom: -15px !important;
-				span {
-					color: $red;
-				}
-				@include mobile {
-					margin-bottom: -22px !important;
-					font-size: 30px;
-				}
+			color: black;
+			text-decoration: none;
+			transition: all 400ms;
+			color: white;
+			@include mobile {
+				display: none;
+			}
+			@include tablet {
+				display: none;
 			}
 		}
 	}
-	.logo-container-black {
-		p {
-			color: $grey !important;
+	.header-logo {
+		position: absolute;
+		height: 100%;
+		right: 0;
+		top: 0;
+
+		.logo {
+			padding: 2em;
+			height: 200px;
+			width: 18em !important;
+			@include mobile {
+				padding: 1em;
+				width: 12em !important;
+			}
+			@include tablet {
+				padding: 2em;
+				width: 18em !important;
+			}
 		}
 	}
-
-	// -LOGO CONTAINER- //
 }

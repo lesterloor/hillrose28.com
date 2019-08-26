@@ -1,114 +1,73 @@
 @import "variables";
-// HOME BURGER  ///
-#burger-container {
-	// position: absolute;
-	margin-top: 32px;
-	margin-left: 33px;
-	z-index: 300;
-	width: 50px;
-	padding: 5px;
+.header-menu {
+	display: none;
 	@include mobile {
-		top: 15px;
-		left: 15px;
+		display: block;
 	}
 	@include tablet {
-		top: 10px;
-		left: 15px;
+		display: block;
 	}
-}
-.burger {
-	width: 40px;
-	height: 2px;
-	background: white;
-	margin-top: 9px;
-	border-radius: 50px;
-}
-#burger-1,
-#burger-3 {
-	transform: rotate(0);
-	transition: all 0.5s ease;
-	&.rotate-top {
-		animation: slide-down-rotate;
-		animation-duration: 0.5s;
-		animation-fill-mode: forwards;
-		animation-direction: alternate;
+	.toggle {
+		display: none;
 	}
-
-	&.rotate-btm {
-		animation: slide-up-rotate;
-		animation-duration: 0.5s;
-		animation-fill-mode: forwards;
-		animation-direction: alternate;
+	.toggle-label {
+		cursor: pointer;
+		display: block;
+		width: 32px;
+		height: 32px;
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
 	}
-
-	&.reset-top {
-		animation: slide-down-reset;
-		animation-duration: 0.5s;
-		animation-fill-mode: forwards;
+	.toggle-label:active {
+		-webkit-tap-highlight-color: transparent;
+	}
+	.toggle-label {
+		cursor: pointer;
+	}
+	.toggle-label .toggle-icon,
+	.toggle-label .toggle-icon:before,
+	.toggle-label .toggle-icon:after {
+		position: relative;
+		display: block;
+		top: 50%;
+		left: 50%;
+		height: 2px;
+		width: 32px;
+		background: #fff;
+		content: "";
+		transition: all 500ms ease-in-out;
 	}
 
-	&.reset-btm {
-		animation: slide-up-reset;
-		animation-duration: 0.5s;
-		animation-fill-mode: forwards;
+	.toggle-label .toggle-icon {
+		transform: translate3d(-50%, -5px, 0);
 	}
-}
-
-#burger-2 {
-	opacity: 1;
-	transition: opacity 0.5s ease;
-
-	&.clicked {
+	.toggle-label .toggle-icon:before {
+		transform: translate3d(-50%, -11.5px, 0);
+	}
+	.toggle-label .toggle-icon:after {
+		transform: translate3d(-50%, 5px, 0);
+	}
+	.toggle:checked ~ .toggle-label .toggle-icon {
+		background-color: transparent;
+	}
+	.toggle:checked ~ .toggle-label .toggle-icon:before,
+	.toggle:checked ~ .toggle-label .toggle-icon:after {
+		top: 0;
+	}
+	.toggle:checked ~ .toggle-label .toggle-icon:before {
+		transform: translateX(-50%) rotate(45deg);
+		top: 1.5px;
+	}
+	.toggle:checked ~ .toggle-label .toggle-icon:after {
+		transform: translateX(-50%) translateY(-10px) rotate(-45deg);
+		top: 8.5px;
+	}
+	.toggle:checked ~ .toggle-label .toggle-text:before {
+		visibility: hidden;
 		opacity: 0;
 	}
-}
-
-@keyframes slide-up-rotate {
-	0% {
-		transform: translateY(0px);
-	}
-	30% {
-		transform: translateY(-12px);
-	}
-	100% {
-		transform: translateY(-12px) rotate(-45deg);
+	.toggle:checked ~ .toggle-label .toggle-text:after {
+		visibility: visible;
+		opacity: 1;
 	}
 }
-
-@keyframes slide-down-rotate {
-	0% {
-		transform: translateY(0px);
-	}
-	30% {
-		transform: translateY(12px);
-	}
-	100% {
-		transform: translateY(12px) rotate(45deg);
-	}
-}
-
-@keyframes slide-up-reset {
-	0% {
-		transform: rotate(45deg) translateY(12px) translateX(5px);
-	}
-	30% {
-		transform: translateY(12px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-}
-
-@keyframes slide-down-reset {
-	0% {
-		transform: rotate(-45deg) translateY(-12px) translateX(5px);
-	}
-	30% {
-		transform: translateY(-12px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
-}
-
-// -HOME BURGER-  ///

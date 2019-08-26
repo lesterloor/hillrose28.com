@@ -33,6 +33,7 @@
     "react-slideshow-image": "^1.2.0",
     "react-spring": "^8.0.27",
     "react-springy-parallax": "^1.3.0",
+    "react-sv": "^0.1.2",
     "react-svg": "^10.0.12",
     "react-url-query": "^1.4.0",
     "react-video-scroll": "^1.0.1",
