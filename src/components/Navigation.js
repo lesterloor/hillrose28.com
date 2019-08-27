@@ -13,8 +13,8 @@ class Navigation extends Component {
         return (
             <div className="header">
                 <div className="header-menu">
-                    <input class="toggle" id="toggle" type="checkbox" />
-                    <label class="toggle-label" for="toggle"><span class="toggle-icon"></span><span class="toggle-text"></span></label>
+                    <input className="toggle" id="toggle" type="checkbox" />
+                    <label className="toggle-label" htmlFor="toggle"><span className="toggle-icon"></span><span className="toggle-text"></span></label>
                 </div>
                 <div className="header-nav">
                     <NavLink id="items" to="/" className="nav-item">Building</NavLink>

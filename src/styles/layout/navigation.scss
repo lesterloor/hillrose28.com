@@ -1,35 +1,52 @@
 @import "../variables";
 @import "../burger";
 @import "../transitions";
-
+.black-burger {
+	background: #9a9a9a !important;
+}
+.black-burger:before {
+	background: #9a9a9a !important;
+}
+.black-burger:after {
+	background: #9a9a9a !important;
+}
+.transparent-header {
+	background-color: #ffffff00 !important;
+	.header-nav {
+		.nav-item {
+			color: white !important;
+		}
+		.cls-1 {
+			fill: white !important;
+		}
+		.cls-2 {
+			fill: #cd5b5b !important;
+		}
+	}
+}
 .header {
-	height: 10em;
+	height: 7.5em;
 	width: 100%;
-	background-color: #ffffff00;
-	padding: 2em;
-	position: fixed;
-	right: 0;
-	top: 0;
+	background-color: white;
+	padding: 1.5em 0 0 1.5em;
+	position: fixed !important;
 	z-index: 500;
-	@include mobile {
-		padding: 1em;
+	@include responsive {
+		padding: 0.8em 0.8em 0;
+		height: 5.5em;
 	}
-	@include tablet {
-		padding: 2em;
-	}
+
 	.header-nav {
 		z-index: 500;
 		.nav-item {
 			margin-right: 1em;
 			font-size: 1em;
-			color: #f95c4f;
 			font-family: neuzeit-grotesk, sans-serif;
 			font-weight: 300;
 			font-style: normal;
-			color: black;
 			text-decoration: none;
 			transition: all 400ms;
-			color: white;
+			color: $grey;
 			@include mobile {
 				display: none;
 			}
@@ -40,22 +57,24 @@
 	}
 	.header-logo {
 		position: absolute;
-		height: 100%;
 		right: 0;
 		top: 0;
-
-		.logo {
-			padding: 2em;
-			height: 200px;
-			width: 18em !important;
-			@include mobile {
-				padding: 1em;
-				width: 12em !important;
-			}
-			@include tablet {
-				padding: 2em;
-				width: 18em !important;
-			}
+		z-index: 306;
+		margin: 1.5em;
+		width: 14em !important;
+		@include mobile {
+			margin: 0.8em;
+			width: 10em !important;
+		}
+		@include tablet {
+			margin: 0.8em;
+			width: 12em !important;
+		}
+		.cls-1 {
+			fill: $grey;
+		}
+		.cls-2 {
+			fill: $red;
 		}
 	}
 }

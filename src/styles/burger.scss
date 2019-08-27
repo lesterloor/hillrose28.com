@@ -13,10 +13,14 @@
 	.toggle-label {
 		cursor: pointer;
 		display: block;
-		width: 32px;
-		height: 32px;
+		position: absolute;
+		width: 100px;
+		height: 100px;
 		user-select: none;
-		-webkit-tap-highlight-color: transparent;
+		@include mobile {
+		}
+		@include tablet {
+		}
 	}
 	.toggle-label:active {
 		-webkit-tap-highlight-color: transparent;
@@ -29,23 +33,42 @@
 	.toggle-label .toggle-icon:after {
 		position: relative;
 		display: block;
-		top: 50%;
-		left: 50%;
+		top: 0%;
+		left: 18%;
 		height: 2px;
-		width: 32px;
+		width: 50px;
 		background: #fff;
+		margin: 1em;
 		content: "";
 		transition: all 500ms ease-in-out;
+		@include mobile {
+			width: 30px;
+		}
+		@include tablet {
+			width: 50px;
+		}
 	}
 
 	.toggle-label .toggle-icon {
-		transform: translate3d(-50%, -5px, 0);
+		transform: translate3d(-65%, 0px, 0);
+		transition: all 500ms ease-in-out;
+		@include mobile {
+			transform: translate3d(-95%, 0px, 0);
+		}
 	}
 	.toggle-label .toggle-icon:before {
-		transform: translate3d(-50%, -11.5px, 0);
+		transform: translate3d(-45%, -11.5px, 0);
+		transition: all 500ms ease-in-out;
+		@include mobile {
+			transform: translate3d(-65%, -11.5px, 0);
+		}
 	}
 	.toggle-label .toggle-icon:after {
-		transform: translate3d(-50%, 5px, 0);
+		transform: translate3d(-45%, -5px, 0);
+		transition: all 500ms ease-in-out;
+		@include mobile {
+			transform: translate3d(-65%, -5px, 0);
+		}
 	}
 	.toggle:checked ~ .toggle-label .toggle-icon {
 		background-color: transparent;
@@ -56,11 +79,11 @@
 	}
 	.toggle:checked ~ .toggle-label .toggle-icon:before {
 		transform: translateX(-50%) rotate(45deg);
-		top: 1.5px;
+		top: 1px;
 	}
 	.toggle:checked ~ .toggle-label .toggle-icon:after {
 		transform: translateX(-50%) translateY(-10px) rotate(-45deg);
-		top: 8.5px;
+		top: -7px;
 	}
 	.toggle:checked ~ .toggle-label .toggle-text:before {
 		visibility: hidden;

@@ -8723,6 +8723,15 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
+react-on-screen@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-on-screen/-/react-on-screen-2.1.1.tgz#c66d78a8187457262d57f71766d1733f875e727a"
+  integrity sha512-mV2Ntd61ncJ9nBsXF/p5Y6lMDGTTwXTGvHaal4b7O1eX3GwSwDXKAe7KKXTf/4Oc1BuYc7j5Sy0XdT89w/MjDA==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.6.0"
+    shallowequal "^1.0.2"
+
 react-parallax-component@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-parallax-component/-/react-parallax-component-1.0.6.tgz#da2ce22e4910eac759cb4a0bc3dc25062d3ddcdf"
@@ -8927,6 +8936,13 @@ react-video-scroll@^1.0.1:
   resolved "https://registry.yarnpkg.com/react-video-scroll/-/react-video-scroll-1.0.1.tgz#a716e51d3364a9d7b054714be55f7d89d5a54945"
   dependencies:
     prop-types "^15.6.1"
+
+react-visibility-sensor@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-5.1.1.tgz#5238380960d3a0b2be0b7faddff38541e337f5a9"
+  integrity sha512-cTUHqIK+zDYpeK19rzW6zF9YfT4486TIgizZW53wEZ+/GPBbK7cNS0EHyJVyHYacwFEvvHLEKfgJndbemWhB/w==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-waypoint@^9.0.2:
   version "9.0.2"
