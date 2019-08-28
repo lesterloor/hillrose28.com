@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import $ from 'jquery';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Row, Col } from "antd"
+import { Row, } from "antd"
 import Plx from 'react-plx';
 import { Waypoint } from 'react-waypoint';
 import Images from "../components/BuildingFrames"
@@ -10,42 +10,41 @@ import Aerial from "../assets/images/homepage/aerial.png"
 import Lobby from "../assets/images/homepage/lobby.png"
 import FrontDoor from "../assets/images/homepage/front_door.png"
 import "../styles/pages/home.scss"
+
 class HomePage extends Component {
     constructor() {
         super()
         this.state = {
-            loaded: false,
             buildingImageHeight: 1,
             secondSectionImage: 1,
-            buildingContainer: 1,
-            thirdSectionImage: 1,
             mainContent: 1,
             firstRow: 1,
             secondRow: 1,
             thirdRow: 1,
             lastRow: 1,
-            End: [],
-            Start: [],
-            display: false
+            text: 1,
         }
     }
-
     componentDidMount = () => {
+
+
         $(window).resize(() => {
             const firstRow = $(".firstRow").height()
             const secondRow = $(".secondRow").height()
             const thirdRow = $(".thirdRow").height()
-
+            const lastRow = $(".lastRow").height()
+            const text = $(".text").height()
             this.setState({
-                firstRow, secondRow, thirdRow
+                firstRow, secondRow, thirdRow, lastRow, text
             })
         });
-        $("#nav-wrapper").removeClass("white-nav")
-        var frameNumber = 0, // start video at frame 0
-            playSpeed = 80,
+        $(".header").addClass("transparent-header")
+        var playSpeed = 80,
+            //frameNumber = 0, // start video at frame 0
+            // playSpeed = 80,
             imageRange = 1,
             totalImages = 30,
-            videoHolder = document.querySelectorAll('#video-holder'),
+            // videoHolder = document.querySelectorAll('#video-holder'),
             imgSeq = document.querySelector('.img-seq'),
             i,
             images = [],
@@ -82,22 +81,22 @@ class HomePage extends Component {
         }
 
         window.addEventListener('scroll', scrollEvent);
-
         function scrollPlay() {
             var frameNumber = Math.floor(window.pageYOffset / playSpeed);
+
             if (frameNumber > 29) {
                 if (frameNumber > 40) {
-                    console.log("frame", frameNumber)
                     $(".mainContent").addClass("main-content-relative")
-                    $("#nav-wrapper").addClass("white-nav")
+                    $(".home-page").css("height", "100vh")
+
                 }
             } else {
-                console.log("frame", frameNumber)
 
                 imgSeq.src = images[frameNumber < 0 ? 0 : frameNumber].src;
             }
         }
     }
+
     loadedImage = (imageRef) => {
         this.setState({
             [imageRef]: $(`.${imageRef}`).height()
@@ -111,27 +110,24 @@ class HomePage extends Component {
             $(".toggle-icon").removeClass("black-burger")
             $(".header").addClass("transparent-header")
 
-            //
         } else {
         }
     }
     onLeaveFirst = (val) => {
         $(".mainContent").addClass("main-content-relative")
-
         $(".home-page").css("height", "100vh")
         $(".toggle-icon").addClass("black-burger")
         $(".header").removeClass("transparent-header")
 
-        console.log("turn nav white")
+
     }
 
 
     render() {
-        const { buildingImageHeight, firstRow, secondRow, thirdRow, lastRow } = this.state
-        console.log("state", this.state)
+        const { buildingImageHeight, firstRow, secondRow, lastRow, text } = this.state
         return (
             <React.Fragment>
-                <div className="home-page">
+                <div className="home-page" style={{ height: buildingImageHeight * 2 }}>
                     <Waypoint
                         onEnter={(val) => this.onEnterFirst(val)}
                         onLeave={(val) => this.onLeaveFirst(val)}
@@ -141,8 +137,6 @@ class HomePage extends Component {
                                 <div onLoad={() => this.loadedImage("buildingImageHeight")} id="video-holder" className="video-holder">
                                     <img className="img-seq buildingImageHeight" style={{ width: "100%" }} src={`${Images[0]}`} alt="" />
                                 </div>
-
-
                             </Row>
                         </div>
                     </Waypoint>
@@ -209,7 +203,7 @@ class HomePage extends Component {
                                             }]
                                         }]} >
                                         <Row className="middle-row-container" type="flex" >
-                                            <div className="image-col-description " style={{ textAlign: "right", minHeight: lastRow, width: "100%" }}>
+                                            <div className="image-col-description " style={{ textAlign: "right", minHeight: text, width: "100%" }}>
                                                 <div className="text">
                                                     <span>Building Blah</span><br />
                                                     <span>OLERE MAGNA ALIQUAM</span><br />
@@ -229,7 +223,7 @@ class HomePage extends Component {
                                 <div onLoad={() => this.loadedImage("lastRow")} className="row-section lastRow" >
                                     <img alt="" src={Lobby} className="section-text-image" />
                                     <div className="image-col-description " style={{ minHeight: lastRow, textAlign: "right" }}>
-                                        <p className="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut nonummy nibh euismod laoreet</p>
+                                        <p className="description" onClick={this.scrollUp}>  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut nonummy nibh euismod laoreet</p>
                                     </div>
                                     {/* <Row type="flex" align="bottom">
                                         <Col className="image-col-with-text">

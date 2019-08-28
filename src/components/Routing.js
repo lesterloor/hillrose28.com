@@ -8,11 +8,11 @@ import HomePage from '../pages/HomePage'
 import ContactPage from '../pages/ContactPage'
 import Residences from '../pages/Residences'
 import Availability from '../pages/Availability'
+import { withRouter } from 'react-router-dom';
 
 class Routing extends Component {
     static contextType = Context
     componentDidMount() {
-        // console.log("fetching component... routing")
     }
     render() {
         return (

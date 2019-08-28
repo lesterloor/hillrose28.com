@@ -1,5 +1,18 @@
 @import "variables";
+.black-burger {
+	background: #9a9a9a !important;
+}
+.black-burger:before {
+	background: #9a9a9a !important;
+}
+.black-burger:after {
+	background: #9a9a9a !important;
+}
+
 .header-menu {
+	.toggle:checked ~ .toggle-label .toggle-icon {
+		background: transparent !important;
+	}
 	display: none;
 	@include mobile {
 		display: block;
@@ -46,6 +59,7 @@
 		}
 		@include tablet {
 			width: 50px;
+			left: 35%;
 		}
 	}
 
@@ -55,6 +69,9 @@
 		@include mobile {
 			transform: translate3d(-95%, 0px, 0);
 		}
+		@include tablet {
+			transform: translate3d(-95%, 0px, 0);
+		}
 	}
 	.toggle-label .toggle-icon:before {
 		transform: translate3d(-45%, -11.5px, 0);
@@ -62,11 +79,17 @@
 		@include mobile {
 			transform: translate3d(-65%, -11.5px, 0);
 		}
+		@include tablet {
+			transform: translate3d(-65%, -11.5px, 0);
+		}
 	}
 	.toggle-label .toggle-icon:after {
 		transform: translate3d(-45%, -5px, 0);
 		transition: all 500ms ease-in-out;
 		@include mobile {
+			transform: translate3d(-65%, -5px, 0);
+		}
+		@include tablet {
 			transform: translate3d(-65%, -5px, 0);
 		}
 	}

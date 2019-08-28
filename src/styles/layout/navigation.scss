@@ -1,15 +1,6 @@
 @import "../variables";
 @import "../burger";
 @import "../transitions";
-.black-burger {
-	background: #9a9a9a !important;
-}
-.black-burger:before {
-	background: #9a9a9a !important;
-}
-.black-burger:after {
-	background: #9a9a9a !important;
-}
 .transparent-header {
 	background-color: #ffffff00 !important;
 	.header-nav {
@@ -25,15 +16,14 @@
 	}
 }
 .header {
-	height: 7.5em;
 	width: 100%;
 	background-color: white;
-	padding: 1.5em 0 0 1.5em;
+	padding: 1.5em;
 	position: fixed !important;
 	z-index: 500;
+
 	@include responsive {
-		padding: 0.8em 0.8em 0;
-		height: 5.5em;
+		padding: 0.8em;
 	}
 
 	.header-nav {
@@ -45,7 +35,7 @@
 			font-weight: 300;
 			font-style: normal;
 			text-decoration: none;
-			transition: all 400ms;
+			// transition: all 400ms;
 			color: $grey;
 			@include mobile {
 				display: none;
@@ -56,18 +46,13 @@
 		}
 	}
 	.header-logo {
-		position: absolute;
-		right: 0;
-		top: 0;
-		z-index: 306;
-		margin: 1.5em;
+		position: relative;
+		float: right;
 		width: 14em !important;
 		@include mobile {
-			margin: 0.8em;
 			width: 10em !important;
 		}
 		@include tablet {
-			margin: 0.8em;
 			width: 12em !important;
 		}
 		.cls-1 {
